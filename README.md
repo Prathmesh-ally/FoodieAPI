@@ -97,26 +97,6 @@ http://localhost:8080/orders
 | PATCH | `/orders/:id` | Update an order |
 | DELETE | `/orders/:id` | Delete an order |
 
----
-
-## 📸 Preview
-
-Add screenshots of your dashboard here.
-
-```text
-assets/
-├── dashboard.png
-├── create-order.png
-└── edit-order.png
-```
-
-Example:
-
-```markdown
-![Dashboard](assets/dashboard.png)
-```
-
----
 
 ## 📦 Dependencies
 
