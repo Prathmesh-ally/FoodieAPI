@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <h1>Order List of Restaurants</h1>
+    <a href="http://localhost:8080/orders/new">Place New Order</a>
+    <div class="order-container">
+        <%for (order of orders) {%>
+            <div class="order">
+                <h3>Order Id: <%=order.id%></h3>
+                <h3>Restaurants:<%=order.restaurant%></h3>
+                <h3>Items :<%=order.item%></h3>
+                <h3>Quantity:<%=order.qty%></h3>
+                <h3>Status:<%=order.status%></h3>
+                <a href="/orders/<%= order.id %>/edit">Edit Status</a>
+                <br><br>
+                <form method="POST" action="/orders/<%= order.id %>?_method=DELETE">
+                    <button>Delete Order</button>
+                </form>
+            </div>
+        <%}%>
+    </div>
+</body>
+</html>

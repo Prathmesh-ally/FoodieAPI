@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Status</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <h1>Update Status of Order</h1>
+    <div class="order-container">
+            <div class="order">
+                <h3>Order Id: <%=order.id%></h3>
+                <h3>Restaurants:<%=order.restaurant%></h3>
+                <h3>Items :<%=order.item%></h3>
+                <h3>Quantity:<%=order.qty%></h3>
+                <form method="post" action="/orders/<%= order.id %>?_method=PATCH">
+                    <select name="status">
+                        <option value="Preparing">Preparing</option>
+                        <option value="Delivered">Delivered</option>
+                        <option value="Out For Delivery">Out For Delivery</option>
+                    </select>
+                    <button>Update Status</button>
+                </form>
+            </div>
+    </div>
+</body>
+</html>
